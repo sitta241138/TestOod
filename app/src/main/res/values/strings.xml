@@ -5,4 +5,6 @@
     <string name="pass">รหัสผ่าน</string>
     <string name="login">เข้าสู่ระบบ</string>
     <string name="register">สมัครสมาชิก</string>
+    <string name="add">เพิ่ม</string>
+    <string name="detail">รายละเอียด</string>
 </resources>

@@ -7,15 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.example.khowoatt.test.Menu.CakeMenu;
-import com.example.khowoatt.test.Menu.PastryMenu;
-import com.example.khowoatt.test.Menu.SnackMenu;
-import com.example.khowoatt.test.SQL.MemberTable;
-import com.example.khowoatt.test.SQL.MenuTable;
-import com.example.khowoatt.test.SQL.OrderTable;
-import com.example.khowoatt.test.SQL.OrderlistTable;
-import com.example.khowoatt.test.SQL.SnackTable;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -177,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickPastry (View view){
-        Intent intent = new Intent(MainActivity.this,PastryMenu.class);
+        Intent intent = new Intent(MainActivity.this,MenuAc.class);
         startActivity(intent);
     }//ลิ้งไปหน้า Menu pastry
     public void onClickCake (View view){
@@ -186,6 +177,10 @@ public class MainActivity extends AppCompatActivity {
     }//ลิ้งไปหน้า Menu cake
     public void onClickSnack (View view){
         Intent intent= new Intent(MainActivity.this,SnackMenu.class);
+        startActivity(intent);
+    }//ลิ้งไปหน้า Menu snack
+    public void onClickMenu (View view){
+        Intent intent= new Intent(MainActivity.this,Login.class);
         startActivity(intent);
     }//ลิ้งไปหน้า Menu snack
 }

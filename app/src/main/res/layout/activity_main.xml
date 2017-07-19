@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imvPastry"
+        android:id="@+id/imvlivPastry"
         android:layout_width="wrap_content"
         android:layout_height="155dp"
         android:onClick="onClickPastry"
@@ -77,7 +77,7 @@
         android:layout_height="155dp"
         android:onClick="onClickCake"
         app:layout_constraintBottom_toTopOf="@+id/imvSnack"
-        app:layout_constraintTop_toBottomOf="@+id/imvPastry"
+        app:layout_constraintTop_toBottomOf="@+id/imvlivPastry"
         app:srcCompat="@drawable/cake"
         tools:layout_editor_absoluteX="0dp" />
 

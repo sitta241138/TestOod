@@ -8,18 +8,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.khowoatt.test.SQL.MemberTable;
-
 public class Login extends AppCompatActivity {
 
     private MemberTable objMemberTable;
+
     private EditText userEditText,passEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Cdatabase();
     }
+
+    private void Cdatabase() {
+        objMemberTable = new MemberTable(this);
+    }
+
     public void btnLogin(View view){
         userEditText = (EditText) findViewById(R.id.editUser);
         passEditText = (EditText) findViewById(R.id.editPass);
@@ -39,12 +45,12 @@ public class Login extends AppCompatActivity {
     private void checkUSERPASSWORD(String struser, String strpass) {
         try{
             String[] strMyResult = objMemberTable.searchUSERPASSWORD(struser);
-            if(strpass.equals(strMyResult[3])){
+            if(strpass.equals(strMyResult[2])){
                 //password True
                 welcomDialog(struser);
             }else {
                 //password False
-                errorDialog("รหัสผ่านใหม่ถูกต้อง","กรุณาลองใหม่");
+                errorDialog("รหัสผ่านไม่ถูกต้อง","กรุณาลองใหม่");
             }
 
         }catch(Exception e){
@@ -84,4 +90,5 @@ public class Login extends AppCompatActivity {
         });
         objBuilder.show();
     } //Builder ERROR
+
 }
