@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PastryMenu" />
         <activity android:name=".CakeMenu" />
         <activity android:name=".SnackMenu" />
         <activity android:name=".Login"></activity>

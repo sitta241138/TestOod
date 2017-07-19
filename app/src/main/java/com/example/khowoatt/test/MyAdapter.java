@@ -11,14 +11,14 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by khowoatt on 18/7/2560.
+ * Created by sitta on 27/4/2560.
  */
 
-public class AdapterPastry extends BaseAdapter {
+public class MyAdapter extends BaseAdapter{
     private Context objcontext;
     private String[] foodString,sourceString,priceString;
 
-    public AdapterPastry(Context context, String[] foodString, String[] sourceString, String[] priceString) {
+    public MyAdapter(Context context, String[] foodString, String[] sourceString, String[] priceString) {
         this.objcontext = context;
         this.foodString = foodString; // ชื่อ
         this.sourceString = sourceString; // รูป
@@ -28,7 +28,7 @@ public class AdapterPastry extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return foodString.length;
+       return foodString.length;
     }
 
     @Override
@@ -44,16 +44,16 @@ public class AdapterPastry extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater objLayoutInflater = (LayoutInflater) objcontext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view1 = objLayoutInflater.inflate(R.layout.listview_pastry, parent,false);
+        View view1 = objLayoutInflater.inflate(R.layout.my_listview, parent,false);
 
         // show food
-        TextView foodTextView = (TextView) view1.findViewById(R.id.texttext);
+        TextView foodTextView = (TextView) view1.findViewById(R.id.txtTitleLiv);
 
         //show price
-        TextView priceTextView = (TextView) view1.findViewById(R.id.texd);
+        TextView priceTextView = (TextView) view1.findViewById(R.id.txtDetailLiv);
 
         //show imagefood
-        ImageView foodImageView = (ImageView) view1.findViewById(R.id.im);
+        ImageView foodImageView = (ImageView) view1.findViewById(R.id.imvIcon);
 
         Picasso.with(objcontext).load(sourceString[position]).into(foodImageView);
         foodTextView.setText(foodString[position]);

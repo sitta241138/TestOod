@@ -29,28 +29,22 @@ public class MenuAc extends AppCompatActivity {
         createListView();
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        mHelper.close();
-        sqliteMyDB.close();
-    }
 
     public void Cdatabase(){ // Open DataBase
         objMenutable = new MenuTable(this);
     } // เปิดใช้งาน sqlite
 
     private void createListView() {
-        //MenuTable objCasephone = new MenuTable(this);
-        //String[] strC_Name = objCasephone.readALLCasePhone(1);
-        //String[] strC_Pic = objCasephone.readALLCasePhone(2);
-        //String[] strC_Price = objCasephone.readALLCasePhone(3);
+        MenuTable objCasephone = new MenuTable(this);
+        String[] strC_Name = objCasephone.readALLMenuTable(1);
+        String[] strC_Pic = objCasephone.readALLMenuTable(3);
+        String[] strC_Price = objCasephone.readALLMenuTable(4);
 
         String[] o1 = {"ht","hy","hu"};
         String[] o2 = {"123","456","789"};
         String[] o3 = {"http://bitmouse.96.lt/GUPER/pic/iphone7.png","http://bitmouse.96.lt/GUPER/pic/iphone7.png","http://bitmouse.96.lt/GUPER/pic/iphone7.png"};
-        //MyAdapter objMyAdapter = new MyAdapter(OrderActivity.this, strC_Name,strC_Price,strC_Pic);
-        AdapterPastry objMyAdapter = new AdapterPastry(MenuAc.this, o1,o3,o2);
+        MyAdapter objMyAdapter = new MyAdapter(MenuAc.this, strC_Name,strC_Price,strC_Pic);
+        //MyAdapter objMyAdapter = new MyAdapter(MenuAc.this, o1,o3,o2);
         MenuListview.setAdapter(objMyAdapter);
 
     }

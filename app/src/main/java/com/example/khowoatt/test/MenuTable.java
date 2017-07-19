@@ -45,15 +45,16 @@ public class MenuTable {
         try {
             String[] strResult = null;
             Cursor objCursor = readSqLiteDatabase.query(Menu_TABLE,
-                    new String[]{Menu_ID,Menu_NAME,Menu_DETAIL,Menu_PRICE,Menu_PICTURE,Menu_TYPE},null,null,null,null,null);
+                    new String[]{Menu_ID,Menu_NAME,Menu_DETAIL,Menu_PRICE,Menu_PICTURE,Menu_TYPE},Menu_PRICE+"=30",null,null,null,null,null);
             if(objCursor != null){
                 if(objCursor.moveToFirst()){
-                    strResult = new String[3];
+                    int num = objCursor.getCount();
+                    strResult = new String[num];
                     // strResult[0] = objCursor.getString(0);
                     // strResult[1] = objCursor.getString(1);
                     // strResult[2] = objCursor.getString(2);
                     // strResult[3] = objCursor.getString(3);
-                    for(int i =0;i<3;i++){
+                    for(int i =0;i<num;i++){
                         strResult[i] = objCursor.getString(intColume);
                         objCursor.moveToNext();
                     }
